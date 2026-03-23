@@ -2,7 +2,7 @@ import pandas as pd
 from data import data_loader, vectorize_data, POSITION
 from recommender import get_recomendations
 
-df = "datasets/general/clean_dataset.csv"
+df = "datasets/general/weighted_dataset.csv"
 
 def select_option(list_options, title):
     print(f"\n--- {title.upper()} ---")
@@ -35,19 +35,20 @@ def start_engine():
     positions = list(POSITION.keys())
     chosen_position = select_option(positions, "Posiciones")
     df_position = data_loader(chosen_position)
-    average_player_team, candidates, candidates_num, players_base = vectorize_data(df_position, chosen_team)
+    average_player_team, candidates, candidates_num, _ = vectorize_data(df_position, chosen_team)
 
     if average_player_team is None:
         print(f"No players found for team '{chosen_team}' in position '{chosen_position}'.")
         return
     
-    similarities = get_recomendations(average_player_team, candidates_num)
+    similarities, raw_similarities = get_recomendations(average_player_team, candidates_num)
 
     candidates['Similarity'] = similarities
-    recomendations = candidates.sort_values(by='Similarity', ascending=False).head(10)
+    candidates['Raw_Similarity'] = raw_similarities
+    recomendations = candidates.sort_values(by='Raw_Similarity', ascending=False).head(10)
 
     print(f"\nRESULT FOR TEAM: {chosen_team} - POSITION: {chosen_position}\n")
-    columnas_mostrar = ['Player', 'Age', 'Team', 'League', 'Wage', 'Value', 'Similarity']
+    columnas_mostrar = ['Player', 'Age', 'Team', 'League', 'Real_Salary', 'Market_Value', 'Similarity', 'Raw_Similarity']
     columnas_mostrar = [c for c in columnas_mostrar if c in recomendations.columns]
     print(recomendations[columnas_mostrar].to_string(index=False))
     print("\n")
