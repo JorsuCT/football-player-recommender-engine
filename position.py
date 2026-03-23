@@ -1,39 +1,42 @@
 import pandas as pd
 
-archivo_entrada = "datasets/general/clean_dataset.csv"
-df = pd.read_csv(archivo_entrada)
+file_input = "datasets/general/weighted_dataset.csv"
+df = pd.read_csv(file_input)
 
-porteros = []
-centrales = []
-laterales = []
-centrocampistas = []
-extremos = []
-delanteros = []
+goalkeepers = []
+centerbacks = []
+fullbacks = []
+dmidfielders = []
+cmidfielders = []
+wingers = []
+forwards = []
 
 for idx, row_stat in df.iterrows():
-    if 'GK' in str(df.loc[idx, 'Pos']):
-        porteros.append(df.loc[idx])
-    if 'CB' in str(df.loc[idx, 'Pos']):
-        centrales.append(df.loc[idx])
-    if any(p in str(df.loc[idx, 'Pos']) for p in ['LB', 'RB', 'RWB', 'LWB']):
-        laterales.append(df.loc[idx])
-    if any(p in str(df.loc[idx, 'Pos']) for p in ['CDM', 'CM', 'CAM']):
-        centrocampistas.append(df.loc[idx])
-    if any(p in str(df.loc[idx, 'Pos']) for p in ['RW', 'LW', 'RM', 'LM']):
-        extremos.append(df.loc[idx])
-    if any(p in str(df.loc[idx, 'Pos']) for p in ['ST', 'CF']):
-        delanteros.append(df.loc[idx])
+    if 'GK' in str(df.loc[idx, 'Positions']):
+        goalkeepers.append(df.loc[idx])
+    if 'CB' in str(df.loc[idx, 'Positions']):
+        centerbacks.append(df.loc[idx])
+    if any(p in str(df.loc[idx, 'Positions']) for p in ['LB', 'RB', 'RWB', 'LWB']):
+        fullbacks.append(df.loc[idx])
+    if any(p in str(df.loc[idx, 'Positions']) for p in ['DM', 'CM']):
+        dmidfielders.append(df.loc[idx])
+    if any(p in str(df.loc[idx, 'Positions']) for p in ['CM', 'AM']):
+        cmidfielders.append(df.loc[idx])
+    if any(p in str(df.loc[idx, 'Positions']) for p in ['RW', 'LW', 'RM', 'LM']):
+        wingers.append(df.loc[idx])
+    if any(p in str(df.loc[idx, 'Positions']) for p in ['ST']):
+        forwards.append(df.loc[idx])
 
-porteros_df = pd.DataFrame(porteros)
-centrales_df = pd.DataFrame(centrales)
-laterales_df = pd.DataFrame(laterales)
-centrocampistas_df = pd.DataFrame(centrocampistas)
-extremos_df = pd.DataFrame(extremos)
-delanteros_df = pd.DataFrame(delanteros)
+goalkeepers_df = pd.DataFrame(goalkeepers)
+centerbacks_df = pd.DataFrame(centerbacks)
+fullbacks_df = pd.DataFrame(fullbacks)
+dmidfielders_df = pd.DataFrame(dmidfielders)
+wingers_df = pd.DataFrame(wingers)
+forwards_df = pd.DataFrame(forwards)
 
-porteros_df.to_csv("datasets/players/porteros.csv", index=False)
-centrales_df.to_csv("datasets/players/centrales.csv", index=False)
-laterales_df.to_csv("datasets/players/laterales.csv", index=False)
-centrocampistas_df.to_csv("datasets/players/centrocampistas.csv", index=False)
-extremos_df.to_csv("datasets/players/extremos.csv", index=False)
-delanteros_df.to_csv("datasets/players/delanteros.csv", index=False)
+goalkeepers_df.to_csv("datasets/players/goalkeepers.csv", index=False)
+centerbacks_df.to_csv("datasets/players/centerbacks.csv", index=False)
+fullbacks_df.to_csv("datasets/players/fullbacks.csv", index=False)
+dmidfielders_df.to_csv("datasets/players/dmidfielders.csv", index=False)
+wingers_df.to_csv("datasets/players/wingers.csv", index=False)
+forwards_df.to_csv("datasets/players/forwards.csv", index=False)
