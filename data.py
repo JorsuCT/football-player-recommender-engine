@@ -5,7 +5,7 @@ POSITION = {
     'Goalkeeper': 'datasets/players/goalkeepers.csv',
     'Centerback': 'datasets/players/centerbacks.csv',
     'Fullback': 'datasets/players/fullbacks.csv',
-    'DMidfielder': 'datasets/players/defensivemidfielders.csv',
+    'DMidfielder': 'datasets/players/dmidfielders.csv',
     'CMidfielder': 'datasets/players/cmidfielders.csv',
     'AMidfielder': 'datasets/players/amidfielders.csv',
     'Winger': 'datasets/players/wingers.csv',
