@@ -1,119 +1,30 @@
-Player: Name of the players.
-Age: Age of the players.
-Nation: Nationality of the players.
-Pos: Positions of the players.
-Team: Team of the players.
-League: League of the players.
-Preferred_Foot: Preferred foot of the players.
-Wage: Annual wages of the players.
-Value: Market value of the players.
-MP: Matches played.
-Starts: Matches started.
-Min: Minutes played.
-90s: Number of full matches played.
-Gls: Goals scored by the players.
-Ast: Assists provided by the players.
-G+A: Goals + Assists.
-G-PK: Goals excluding penalties.
-PK: Penalties kicked by the players.
-PKatt: Penalties attempted by the players.
-CrdY: Yellow cards received by the players.
-CrdR: Red cards received by the players.
-Per 90 Minutes_Gls: Goals scored per 90 minutes.
-Per 90 Minutes_Ast: Assists provided per 90 minutes.
-Per 90 Minutes_G+A: Goals + Assists per 90 minutes.
-Per 90 Minutes_G-PK: Goals excluding penalties per 90 minutes.
-Per 90 Minutes_G+A-PK: Goals + Assists excluding penalties per 90 minutes.
-Sh: Shots taken by the players excluding penalties.
-SoT: Shots on target by the players excluding penalties.
-SoT%: Percentage of shots on target.
-Sh/90: Shots taken per 90 minutes excluding penalties.
-SoT/90: Shots on target per 90 minutes excluding penalties.
-G/Sh: Goals per shot taken.
-G/SoT: Goals per shot on target excluding penalties.
-Cmp: Passes completed by the players.
-Att: Passes attempted by the players.
-Cmp%: Percentage of passes completed.
-TotDist: Total passing distance.
-PrgDist: Progressive passing distance.
-Short_Cmp: Passes completed by the players for short passes.
-Short_Att: Passes attempted by the players for short passes.
-Short_Cmp%: Percentage of short passes completed.
-Medium_Cmp: Passes completed by the players for medium passes.
-Medium_Att: Passes attempted by the players for medium passes.
-Medium_Cmp%: Percentage of medium passes completed.
-Long_Cmp: Passes completed by the players for long passes.
-Long_Att: Passes attempted by the players for long passes.
-Long_Cmp%: Percentage of long passes completed.
-A-xAG: Assists - expected assists.
-KP: Key passes by the players.
-1/3: Passes into the final third by the players.
-PPA: Passes into the penalty area by the players.
-CrsPA: Crosses into the penalty area by the players.
-Tkl: Tackles by the players.
-TklW: Tackles won by the players.
-Def 3rd: Tackles in defensive third by the players.
-Mid 3rd: Tackles in middle third by the players.
-Att 3rd: Tackles in attacking third by the players.
-Tkl%: Percentage dribbles tackled.
-Lost: Challenges lost by the players.
-Blocks: Number of blocks by the players.
-Pass: Passes by the players.
-Int: Interceptions by the players.
-Tkl+Int: Tackles + Interceptions by the players.
-Clr: Clearances by the players.
-Err: Errors leading to a shot by the opponent.
-Touches_Touches: Total touches by the players.
-Touches_Def Pen: Touches in defensive penalty area by the players.
-Touches_Def 3rd: Touches in defensive third by the players.
-Touches_Mid 3rd: Touches in middle third by the players.
-Touches_Att 3rd: Touches in attacking third by the players.
-Touches_Att Pen: Touches in attacking penalty area by the players.
-Touches_Live: Touches with the ball in play by the players.
-Take-Ons_Att: Take-Ons attempted by the players.
-Take-Ons_Succ: Take-Ons successful by the players.
-Take-Ons_Succ%: Percentage of successful Take-Ons.
-Take-Ons_Tkld: Take-Ons tackled by the opponent.
-Take-Ons_Tkld%: Percentage of Take-Ons tackled by the opponent.
-Carries_Carries: Total carries by the players.
-Carries_TotDist: Total carrying distance.
-Carries_PrgDist: Progressive carrying distance.
-Carries_1/3: Carries into the final third.
-Carries_CPA: Carries into the penalty area.
-Carries_Mis: Miscontrols by the players.
-Carries_Dis: Dispossessions by the players.
-Rec: Receptions by the players.
-2CrdY: Second yellow cards received by the players.
-Fls: Fouls committed by the players.
-Fld: Fouls suffered by the players.
-Off: Offsides by the players.
-Crs: Crosses by the players.
-PKwon: Penalties won by the players.
-PKcon: Penalties conceded by the players.
-OG: Own goals by the players.
-Subs: Substitutions made by the players.
-Mn/Sub: Minutes per substitution by the players.
-unSub: Matches as an unused substitute.
-PPM: Points per match by the players.
-onG: Goals scored while on the pitch by the players.
-onGA: Goals conceded while on the pitch by the players.
-+/-: Goal difference while on the pitch for the players.
-+/-90: Goal difference per 90 minutes while on the pitch for the players.
-On-Off: Goal difference when the player is on the pitch vs. off the pitch.
-GA: Goals against by the players.
-GA90: Goals against per 90 minutes by the players.
-SoTA: Shots on target against by the players.
-Saves: Saves by the players.
-Save%: Percentage of saves by the players.
-W: Wins by the players.
-D: Draws by the players.
-L: Losses by the players.
-CS: Clean sheets by the players.
-CS%: Percentage of clean sheets by the players.
-PKA: Penalties allowed by the players.
-PKsv: Penalties saved by the players.
-PKm: Penalties missed by the players.
-90s_Gls: Goals per 90 minutes by the players.
-90s_Ast: Assists per 90 minutes by the players.
-90s_G+A: Goals + Assists per 90 minutes by the players.
-90s_G-PK: Goals (excluding penalties) per 90 minutes by the players.
+Player: Full name of the football player.
+Age: Current age of the player.
+Positions: Specific roles or areas on the pitch where the player operates (e.g., ST, CM, CB, GK).
+Team: The football club the player currently represents.
+League: The primary competition or division in which the player's team participates.
+Foot: The dominant or preferred foot of the player (Left, Right, or Both).
+Real_Salary: The actual financial compensation or wage the player earns.
+Market_Value: The estimated financial value of the player in the transfer market.
+Goals: Total number of goals scored by the player.
+Expected Goals (xG): A statistical metric indicating the number of goals a player was expected to score based on the quality and probability of the chances they received.
+Successful Dribbles: The number of times the player successfully bypassed an opponent while retaining possession of the ball.
+Tackles: Total number of times the player successfully dispossessed an opposing player.
+Assists: The number of passes provided by the player that directly resulted in a goal.
+Accurate Passes Percentage: The ratio of completed passes to total attempted passes, expressed as a percentage.
+Rating: An overall statistical score evaluating the player's performance during matches.
+Big Chances Missed: The number of clear, high-probability goal-scoring opportunities that the player failed to convert.
+Total Shots: The total count of goal attempts made by the player, including those on target, off target, and blocked.
+Goal Conversion Percentage: The percentage of the player's total shots that successfully resulted in a goal.
+Interceptions: The number of times the player anticipated and successfully intercepted an opponent's pass.
+Clearances: The number of times the player kicked or headed the ball out of a defensive zone to relieve opposition pressure.
+Error Lead To Goal: The number of individual defensive mistakes made by the player that directly resulted in the opposing team scoring.
+Outfielder Blocks: The number of times a non-goalkeeper physically blocked an opponent's shot, cross, or pass.
+Big Chances Created: The number of highly favorable goal-scoring opportunities the player generated for their teammates.
+Accurate Passes: The total count of passes successfully delivered to a teammate.
+Key Passes: The number of passes that directly led to a shot on goal by a teammate, without necessarily resulting in an assist.
+Saves: The total number of shots on target successfully stopped by the goalkeeper.
+Clean Sheet: The number of matches in which the player or goalkeeper completed the game without their team conceding a goal.
+Penalty Save: The number of penalty kicks successfully stopped by the goalkeeper.
+Saved Shots From Inside The Box: The number of saves made by the goalkeeper specifically from shots taken within the 18-yard penalty area.
+Runs Out: The number of times the goalkeeper successfully rushed off their goal line to intercept a pass, collect a loose ball, or challenge an advancing attacker.
