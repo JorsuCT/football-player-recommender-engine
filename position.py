@@ -35,7 +35,7 @@ centerbacks_df = pd.DataFrame(centerbacks)
 fullbacks_df = pd.DataFrame(fullbacks)
 cmidfielders_df = pd.DataFrame(cmidfielders)
 dmidfielders_df = pd.DataFrame(dmidfielders)
-amidfielders_df = pd.DataFrame(dmidfielders)
+amidfielders_df = pd.DataFrame(amidfielders)
 wingers_df = pd.DataFrame(wingers)
 forwards_df = pd.DataFrame(forwards)
 

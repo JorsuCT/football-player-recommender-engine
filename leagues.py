@@ -6,7 +6,7 @@ top_5 = set(['Premier League', 'LaLiga', 'Serie A', 'Bundesliga', 'Ligue 1'])
 next_14 = set(['Serie B', 'Pro League', 'Segunda División', 'Primera División (Argentina)', 'Championship', 'Liga MX', 'Ligue 2',
                 'Primeira Liga', 'Saudi Pro League', 'Brasileirao', 'Super Lig', '2.Bundesliga', 'Eredivisie', 'MLS'])
 low_level = set(['EFL', 'Primera / Segunda RFEF', 'Serie C', '3. Liga', 'Nacional', 'Ascenso (Argentina)', 'Serie B / Ascenso (Brasil)',
-                 'Chilean Primera División', 'A-League', 'Chinese Super League', ])
+                 'Chilean Primera División', 'A-League', 'Chinese Super League', 'Rest of the World'])
 
 important_columns = ['Goals','Expected Goals','Successful Dribbles','Tackles','Assists','Big Chances Missed','Total Shots', 
                      'Interceptions','Clearances','Error Lead To Goal','Outfielder Blocks','Big Chances Created','Accurate Passes',
@@ -24,4 +24,4 @@ if col_league in df.columns:
 for col in important_columns:
     df[col] = df[col] * multiplier
 
-df.to_csv("weighted_dataset.csv", index=False)
+df.to_csv("datasets/general/weighted_dataset.csv", index=False)

@@ -3,14 +3,15 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 
-def get_recomendations(base_average_player, candidates_matrix):
-    """
-    Main engine. Recibes the static parameters and returns a DataFrame with the results.
-    """
+def get_recomendations(base_average_player, candidates_matrix, full_population_matrix):
+    """ Main engine. Recibes the static parameters and returns a DataFrame with the results. """
     scaler = StandardScaler()
 
-    scaler.fit(candidates_matrix)
-
+    scaler.fit(full_population_matrix)
+    
+    candidates_matrix['Error Lead To Goal'] = candidates_matrix['Error Lead To Goal'] * -1
+    candidates_matrix['Big Chances Missed'] = candidates_matrix['Big Chances Missed'] * -1
+    
     candidates_scaled = scaler.transform(candidates_matrix)
     scaled_base_player = scaler.transform(base_average_player)
 
