@@ -1,6 +1,8 @@
 import pandas as pd
 from data import data_loader, vectorize_data, POSITION
 from recommender import get_recomendations
+import radar
+import numpy as np
 
 df = "datasets/general/weighted_dataset.csv"
 
@@ -85,3 +87,57 @@ def start_engine():
     columns_show = [c for c in columns_show if c in recomendations.columns]
     print(recomendations[columns_show].to_string(index=False))
     print("\n")
+
+    candidates_name = recomendations['Player'].tolist()
+    print("\nSelect candidate to compare:")
+    
+    for i, name in enumerate(candidates_name, 1):
+        print(f"{i}. {name}")
+    
+    while True:
+        try:
+            selection = int(input(f"\nIntroduce the number (1-{len(candidates_name)}):"))
+            if 1 <= selection <= len(candidates_name):
+                candidate_chosen = candidates_name[selection - 1]
+                break
+            else:
+                print("Invalid option.")
+        except ValueError:
+            print("Introduce a valid number.")
+    
+    try: 
+        df_clean = pd.read_csv("datasets/general/clean_dataset.csv", low_memory=False)
+    except FileNotFoundError:
+        return
+
+    if chosen_position == 'Goalkeeper':
+        radar_cols = ['Saves', 'Saved Shots From Inside The Box', 'Clean Sheet', 'Penalty Save', 'Runs Out', 
+                      'Accurate Passes', 'Accurate Passes Percentage', 'Clearances', 'Error Lead To Goal']
+    else:
+        radar_cols = ['Goals', 'Expected Goals', 'Goal Conversion Percentage', 'Assists', 'Key Passes', 'Accurate Passes',
+                      'Big Chances Created','Successful Dribbles', 'Accurate Passes Percentage', 'Tackles', 'Interceptions', 
+                      'Clearances', 'Outfielder Blocks', 'Big Chances Missed', 'Total Shots', 'Error Lead To Goal']
+    
+    radar_cols = [col for col in radar_cols if col in df_clean.columns]
+
+    names_position = df_position['Player'].unique()
+    pop_raw = df_clean[df_clean['Player'].isin(names_position)][radar_cols].fillna(0)
+
+    candidate_raw = df_clean[df_clean['Player'] == candidate_chosen][radar_cols].fillna(0).head(1)
+
+    if target_mode == "Player":
+        target_raw = df_clean[df_clean['Player'] == target_value][radar_cols].fillna(0).head(1)
+        target_display_name = target_value
+    else:
+        players_role = df_position[df_position['Tactical_Role'] == target_value]['Player'].unique()
+        target_raw = df_clean[df_clean['Player'].isin(players_role)][radar_cols].fillna(0).mean().to_frame().T
+        target_display_name = f"Ideal Arqutipe (Role {target_value})"
+    
+    radar.generate_radar(
+        target_name=target_display_name,
+        candidate_name=candidate_chosen,
+        target_raw=target_raw,
+        candidate_raw=candidate_raw,
+        population_raw=pop_raw,
+        columns=radar_cols
+    )
