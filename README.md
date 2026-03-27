@@ -89,20 +89,15 @@ graph TD
 ## Usage
 Running the Web Application:
 
-1. Start the Streamlit application by running:
+1. Enter the webpage `https://football-player-recommender-engine.streamlit.app`:
 
-```bash
-streamlit run app.py
-```
-2. Open your web browser and navigate to the local URL provided in the terminal.
+2. Use the sidebar to set your scouting filters (League, Team, Position) and adjust your financial margins.
 
-3. Use the sidebar to set your scouting filters (League, Team, Position) and adjust your financial margins.
+3. Select your searching strategy (substitute an exact player or search by tactical role).
 
-4. Select your searching strategy (substitute an exact player or search by tactical role).
+4. Click "Search substitutes" to generate the top 10 player recommendations.
 
-5. Click "Search substitutes" to generate the top 10 player recommendations.
-
-6. Use the Interactive Radar section to visually compare the recommended candidate against the target profile.
+5. Use the Interactive Radar section to visually compare the recommended candidate against the target profile.
 
 ## Running the CLI Application:
 
@@ -114,8 +109,6 @@ streamlit run app.py
 2. Follow the terminal prompts to select leagues, teams, and candidates.
 
 ## Project Structure
-* `app.py`: The main Streamlit application script containing the user interface and frontend logic.
-
 * `main.py` & selection.py: The command-line alternative for interacting with the recommendation engine.
 
 * `recommender.py`: Contains the core mathematical logic and machine learning functions for calculating player similarities.
