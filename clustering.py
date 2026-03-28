@@ -16,7 +16,7 @@ POSITION_FILES = [
     'datasets/players/forwards.csv'
 ]
 
-N_CLUSTERS = 4 
+N_CLUSTERS = 3
 
 print("Starting positional Clustering engine (K-Means)")
 
