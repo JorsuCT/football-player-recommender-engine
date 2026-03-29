@@ -8,6 +8,9 @@ on:
     paths:
       - 'datasets/general/clean_dataset.csv'
 
+permissions: 
+  contents: write
+
 jobs:
   data-update:
     runs-on: ubuntu-latest
