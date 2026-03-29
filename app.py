@@ -6,7 +6,7 @@ import radar
 
 st.set_page_config(page_title="Statistical Football Scout", page_icon="⚽", layout="wide")
 
-@st.cache_data
+@st.cache_data(ttl="12h")
 def load_data():
     df_clean = pd.read_csv("datasets/general/clean_dataset.csv", low_memory=False)
     df_weighted = pd.read_csv("datasets/general/weighted_dataset.csv", low_memory=False)
